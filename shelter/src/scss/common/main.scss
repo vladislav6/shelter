@@ -1,0 +1,8 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/extends';
+@use '/src/scss/common/mixins' as m;
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}

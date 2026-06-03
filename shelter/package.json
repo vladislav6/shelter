@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "sass": "^1.100.0",
     "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "modern-normalize": "^3.0.1"
   }
 }
