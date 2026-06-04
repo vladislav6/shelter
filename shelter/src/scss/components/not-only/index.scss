@@ -1,0 +1,39 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/extends';
+@use '/src/scss/common/mixins' as m;
+
+.not-only {
+  .container {
+    padding-top: 60px;
+    padding-bottom: 0;
+    @include m.flex-settings (row, no-wrap, 42px, start, stretch);
+  }
+}
+
+.offer {
+  @include m.flex-settings (column, no-wrap, 42px, center, stretch);
+  margin-top: -80px;
+  &__title {
+    font-size: 2.75rem;
+    line-height: 130%;
+    color: v.$color-light-xl;
+    letter-spacing: normal;
+    padding-right: 50px;
+  }
+  
+  &__text {
+    color: v.$color-dark-s;
+  }
+
+  &__btn {
+    line-height: 52px;
+    text-align: center;
+    width: 207px;
+    height: 52px;
+    background: v.$color-primary;
+  }
+}
+
+.start-screen-puppy img {
+  @extend %disp-block;
+}

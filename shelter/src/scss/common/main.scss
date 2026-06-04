@@ -25,8 +25,29 @@ a {
 ul li { list-style: none; }
 p { margin: 0; } 
 
+.bg-transparent {
+  background:
+    url('/src/assets/noise_transparent.png'),
+    radial-gradient(
+      circle at -45% -10%,
+      rgba(91, 72, 58, 1) 0%,
+      rgba(91, 72, 58, 1) 40%,
+      rgba(38, 36, 37, 1) 80%,
+      rgba(38, 36, 37, 1) 100%),
+    v.$start-screen-gradient-background;
+}
+
 .container {
   width: 1280px;
   margin: 0 auto;
   padding: 80px 40px 100px;
+}
+
+.btn {
+  border-radius: 100px;
+  @include m.typography (v.$font-family, 400, 1.1rem, 130%, 0.04em, v.$color-dark-3xl);
+}
+
+.btn:hover {
+  background: v.$color-primary-light;
 }

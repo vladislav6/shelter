@@ -1,14 +1,5 @@
 @use '/src/scss/common/variables' as v;
-@use '/src/scss/common/extends';
 @use '/src/scss/common/mixins' as m;
-
-.home {
-  header {
-  background:
-    url('/src/assets/noise_transparent.png'),
-    v.$start-screen-gradient-background;
-  }
-}
 
 header {
   .container {
