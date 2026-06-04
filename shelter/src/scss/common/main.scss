@@ -4,5 +4,29 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  @include m.typography (v.$second-family, 400, 16px, 160%, normal, v.$color-dark-xl);
+}
+
+body {
+  background-color: v.$color-light-xl;
+}
+
+h1,
+h2,
+h3 {
+  @include m.typography (v.$font-family, 400, 2rem, 100%, 0.05em, v.$color-primary);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul li { list-style: none; }
+p { margin: 0; } 
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 80px 40px 100px;
 }

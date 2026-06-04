@@ -1,0 +1,45 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/extends';
+@use '/src/scss/common/mixins' as m;
+
+.home {
+  header {
+  background:
+    url('/src/assets/noise_transparent.png'),
+    v.$start-screen-gradient-background;
+  }
+}
+
+header {
+  .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include m.flex-settings (row, no-wrap, 0, space-between, center);
+  }
+}
+
+.logo {
+  @include m.flex-settings (column, no-wrap, 0, start, stretch);
+
+  &__subtitle {
+    font-size: 0.9375rem;
+    letter-spacing:  0.058em;
+    padding: 8px 0 0 5px;
+    margin-bottom: -5px;
+    color: v.$color-light-s;
+  }
+}
+
+.navigation ul {
+  @include m.flex-settings (row, no-wrap, 35px, start, center);
+
+  a { color: v.$color-dark-s; }
+  a:hover { color: v.$color-light-s; }
+
+  .active { border-bottom: 3px solid v.$color-primary; }
+  .active a{
+    color: v.$color-light-s;
+    cursor: default;
+    pointer-events: none;
+  }
+}

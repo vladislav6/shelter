@@ -1,13 +1,31 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/helps/icon-sleeping-area.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/src/assets/helps/icon-sleeping-area.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Source+Sans+Pro:wght@400;600&amp;display=swap" rel="stylesheet">
     <title>Cozy House Shelter</title>
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="home">
+    <header>
+      <div class="container">
+        <a class="logo" href="#">
+          <h1 class="logo__title">Cozy House</h1>
+          <p class="logo__subtitle">Shelter for pets in Boston</p>
+        </a>
+        <nav class="navigation">
+          <ul>
+            <li class="active"><a href="/">About the shelter</a></li>
+            <li><a href="/pets">Our pets</a></li>
+            <li><a href="#help">Help the shelter</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
