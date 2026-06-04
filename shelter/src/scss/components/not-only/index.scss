@@ -1,5 +1,4 @@
 @use '/src/scss/common/variables' as v;
-@use '/src/scss/common/extends';
 @use '/src/scss/common/mixins' as m;
 
 .not-only {
@@ -26,10 +25,7 @@
   }
 
   &__btn {
-    line-height: 52px;
-    text-align: center;
     width: 207px;
-    height: 52px;
     background: v.$color-primary;
   }
 }

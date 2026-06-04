@@ -1,0 +1,20 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.card {
+  @include m.flex-settings (column, no-wrap, 30px, start, center);
+  background-color: v.$color-light-s;
+  margin: 0;
+  padding-bottom: 30px;
+  cursor: pointer;
+
+  &__title {
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+  }
+
+  &__btn {
+    width: 187px;
+    background-color: inherit;
+  }
+}

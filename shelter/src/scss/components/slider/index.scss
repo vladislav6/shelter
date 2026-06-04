@@ -1,0 +1,33 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.pets-slider {
+  .container {
+    @include m.flex-settings (column, no-wrap, 60px, start, center);
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2.1875rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+  }
+
+  &__slider {
+    @include m.flex-settings (row, no-wrap, 53px, start, center);
+  }
+
+  &__slides {
+    @include m.flex-settings (row, no-wrap, 90px, start, center);
+  }
+
+  &__btn {
+    padding: 15px 40px;
+    width: 261px;
+    background: v.$color-primary;
+  }
+
+  .right-arrow {
+    transform: rotate(180deg);
+  }
+}

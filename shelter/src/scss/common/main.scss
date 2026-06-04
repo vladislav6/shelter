@@ -21,6 +21,7 @@ h3 {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color .4s ease;
 }
 
 ul li { list-style: none; }
@@ -38,6 +39,10 @@ p { margin: 0; }
     v.$start-screen-gradient-background;
 }
 
+.bg-light-l {
+  background: v.$color-light-l;
+}
+
 .container {
   width: 1280px;
   margin: 0 auto;
@@ -45,10 +50,22 @@ p { margin: 0; }
 }
 
 .btn {
+  cursor: pointer;
   border-radius: 100px;
   @include m.typography (v.$font-family, 400, 1.1rem, 130%, 0.04em, v.$color-dark-3xl);
+  height: 52px;
+  border: 2px solid v.$color-primary;
+  display: grid;
+  place-items: center;
+  transition: background .4s ease;
 }
 
+.sldr-pgntn-btn {
+  width: 52px;
+}
+
+.card:hover .card__btn,
 .btn:hover {
   background: v.$color-primary-light;
+  border: 2px solid v.$color-primary-light;
 }
