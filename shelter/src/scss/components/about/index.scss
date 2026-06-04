@@ -1,0 +1,27 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.about {
+  &__pets {
+    @include m.flex-settings (row, no-wrap, 120px, start, center);
+    padding: 0 175px;
+  }
+
+  &__description {
+     @include m.flex-settings (column, no-wrap, 25px, center, stretch);
+  }
+
+  &__title {
+    font-size: 2.1875rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    padding-right: 50px;
+  }
+
+  &__text1,
+  &__text2 {
+    font-size: 0.9375rem;
+    line-height: 160%;
+    letter-spacing: 0.4px;
+  }
+}

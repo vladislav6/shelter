@@ -14,7 +14,7 @@ body {
 h1,
 h2,
 h3 {
-  @include m.typography (v.$font-family, 400, 2rem, 100%, 0.05em, v.$color-primary);
+  @include m.typography (v.$font-family, 400, 2rem, 100%, 0.05em, v.$color-dark-l);
   margin: 0;
 }
 
@@ -22,6 +22,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 ul li { list-style: none; }
 p { margin: 0; } 
 
