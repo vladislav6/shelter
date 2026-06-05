@@ -6,10 +6,6 @@
     @include m.flex-settings (column, no-wrap, 60px, start, center);
   }
 
-  &__title {
-    text-align: center;
-  }
-
   &__slider {
     @include m.flex-settings (row, no-wrap, 53px, start, center);
   }
@@ -22,6 +18,16 @@
     padding: 15px 40px;
     width: 261px;
     background: v.$color-primary;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    background-color: inherit;
+  }
+
+  .left-arrow:hover,
+  .right-arrow:hover {
+    background-color: v.$color-primary-light;
   }
 
   .right-arrow {

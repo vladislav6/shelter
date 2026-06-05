@@ -2,6 +2,8 @@
 @use '/src/scss/common/mixins' as m;
 
 footer {
+  margin-top: auto;
+  
   .container {
     padding: 40px 40px 0;
     @include m.flex-settings (row, no-wrap, 150px, start, stretch);
@@ -9,7 +11,7 @@ footer {
 
   .contacts,
   .location {
-    margin-top: 16px;
+    margin-top: 14px;
 
     &__title {
       color: v.$color-light-xl;

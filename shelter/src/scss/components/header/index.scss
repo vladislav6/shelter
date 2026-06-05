@@ -38,3 +38,16 @@ header {
     pointer-events: none;
   }
 }
+
+.pets-page {
+  .logo__title,
+  .navigation a {
+    color: v.$color-dark-l;
+  }
+
+  .navigation ul a:hover,
+  .navigation ul .active a,
+  .logo__subtitle {
+    color: v.$color-dark-3xl;
+  }
+}
