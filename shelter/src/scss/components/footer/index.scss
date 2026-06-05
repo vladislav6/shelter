@@ -1,0 +1,42 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+footer {
+  .container {
+    padding: 40px 40px 0;
+    @include m.flex-settings (row, no-wrap, 150px, start, stretch);
+  }
+
+  .contacts,
+  .location {
+    margin-top: 16px;
+
+    &__title {
+      color: v.$color-light-xl;
+    }
+
+    &__item {
+      @include m.flex-settings (row, no-wrap, 20px, start, center);
+      font-family: v.$font-family;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      color: v.$color-primary;
+    }
+  }
+
+  .contacts {
+    @include m.flex-settings (column, no-wrap, 40px, start, stretch);
+    
+    .phone {
+      font-size: 1.4375rem;
+    }
+  }
+
+  .location {
+    margin-left: -20px;
+    @include m.flex-settings (column, no-wrap, 32px, start, stretch);
+  }
+
+}
