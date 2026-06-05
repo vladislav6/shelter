@@ -31,11 +31,9 @@ header {
   a { color: v.$color-dark-s; }
   a:hover { color: v.$color-light-s; }
 
-  .active { border-bottom: 3px solid v.$color-primary; }
-  .active a{
+  .active {
     color: v.$color-light-s;
-    cursor: default;
-    pointer-events: none;
+    border-bottom: 3px solid v.$color-primary;
   }
 }
 
@@ -46,7 +44,7 @@ header {
   }
 
   .navigation ul a:hover,
-  .navigation ul .active a,
+  .navigation ul .active,
   .logo__subtitle {
     color: v.$color-dark-3xl;
   }

@@ -19,11 +19,9 @@
           </a>
           <nav class="navigation">
             <ul>
-              <li class="active">
-                <a href="/">About the shelter</a>
-              </li>
+              <li class="active">About the shelter</li>
               <li>
-                <a href="/pets">Our pets</a>
+                <a href="pets">Our pets</a>
               </li>
               <li>
                 <a href="#help">Help the shelter</a>
@@ -40,7 +38,7 @@
           <div class="offer">
             <h2 class="offer__title">Not only people need a house</h2>
             <p class="offer__text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-            <a class="btn offer__btn" href="/pets">Make a friend</a>
+            <a class="btn offer__btn" href="#our-friends">Make a friend</a>
           </div>
           <div class="start-screen-puppy">
             <img src="/src/assets/start-screen-puppy.png" alt="dog" width="698" height="728">
@@ -61,7 +59,7 @@
           </div>
         </div>
       </section>
-      <section class="bg-light-l pets-slider">
+      <section id="our-friends" class="bg-light-l pets-slider">
         <div class="container">
           <h3 class="pets__title">Our friends who<br>are looking for a house</h3>
           <div class="pets-slider__slider">
@@ -69,27 +67,27 @@
               <img src="/src/assets/icons/Arrow.png" alt="Arrow left" width="14" height="6">
             </button>
             <div class="pets-slider__slides">
-              <figure class="card">
+              <div class="card">
                 <img src="/src/assets/pets/pets-katrine.png" alt="Cat" width="270" height="270">
-                <figcaption class="card__title">Katrine</figcaption>
+                <p class="card__title">Katrine</p>
                 <button class="btn card__btn">Learn more</button>
-              </figure>
-              <figure class="card">
+              </div>
+              <div class="card">
                 <img src="/src/assets/pets/pets-jennifer.png" alt="Cat" width="270" height="270">
-                <figcaption class="card__title">Jennifer</figcaption>
+                <p class="card__title">Jennifer</p>
                 <button class="btn card__btn">Learn more</button>
-              </figure>
-              <figure class="card">
+              </div>
+              <div class="card">
                 <img src="/src/assets/pets/pets-woody.png" alt="Cat" width="270" height="270">
-                <figcaption class="card__title">Woody</figcaption>
+                <p class="card__title">Woody</p>
                 <button class="btn card__btn">Learn more</button>
-              </figure>
+              </div>
             </div>
             <button class="sldr-pgntn-btn btn right-arrow">
               <img src="/src/assets/icons/Arrow.png" alt="Arrow right" width="14" height="6">
             </button>
           </div>
-          <a class="btn pets-slider__btn" href="/pets">Get to know the rest</a>
+          <a class="btn pets-slider__btn" href="pets">Get to know the rest</a>
         </div>
       </section>
       <section id="help" class="helps">
@@ -143,7 +141,7 @@
             <p class="donation__bank">Name of the bank / Type of bank account</p>
             <figure class="donation__number">
               <img src="/src/assets/icons/credit-card.svg" alt="Credit card number" width="30" height="23">
-              <figcaption>8380 2880 8028 8791 7435</figcaption>
+              <figcaption><a href="#">8380 2880 8028 8791 7435</a></figcaption>
             </figure>
             <p class="donation__legal">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
           </div>
@@ -152,28 +150,28 @@
     </main>
     <footer id="contacts" class="bg-transparent-gradient">
       <div class="container">
-        <ul class="contacts">
+        <div class="contacts">
           <h3 class="contacts__title">For questions and suggestions</h3>
-          <li class="contacts__item">
+          <div class="contacts__item">
             <img src="/src/assets/icons/icon-email.svg" alt="Mail" width="40" height="32">
             <a href="mailto:email@shelter.com">email@shelter.com</a>
-          </li>
-          <li class="contacts__item">
+          </div>
+          <div class="contacts__item">
             <img src="/src/assets/icons/phone.png" alt="Phone" width="40" height="32">
-            <a class="phone" href="tel:+13 674 567 75 54">&plus;13&nbsp;674&nbsp;567&nbsp;75&nbsp;54</a>
-          </li>
-        </ul>
-        <ul class="location">
+            <a class="phone" href="tel:+136745677554">&plus;13&nbsp;674&nbsp;567&nbsp;75&nbsp;54</a>
+          </div>
+        </div>
+        <div class="location">
           <h3 class="location__title">We are waiting for your visit</h3>
-          <li class="location__item">
+          <div class="location__item">
             <img src="/src/assets/icons/icon-marker.png" alt="Boston address" width="22" height="32">
             <a href="https://maps.app.goo.gl/VyFSj4KABrwhwKbD9" target="_blank">1 Central Street, Boston (entrance from the store)</a>
-          </li>
-          <li class="location__item">
+          </div>
+          <div class="location__item">
             <img src="/src/assets/icons/icon-marker.png" alt="London address" width="22" height="32">
             <a href="https://maps.app.goo.gl/kYiE5ke1Eq8QvyF27" target="_blank">18 South Park, London</a>
-          </li>
-        </ul>
+          </div>
+        </div>
         <img src="/src/assets/footer-puppy.png" alt="Puppy" width="300" height="310">
       </div>
     </footer>
