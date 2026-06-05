@@ -4,7 +4,6 @@
 .card {
   @include m.flex-settings (column, no-wrap, 30px, start, center);
   background-color: v.$color-light-s;
-  margin: 0;
   padding-bottom: 30px;
   cursor: pointer;
 

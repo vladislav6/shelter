@@ -1,0 +1,31 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.helps {
+  .container {
+    @include m.flex-settings (column, no-wrap, 60px, start, center);
+  }
+
+  &__title {
+    text-align: center;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    font-size: 2.1875rem;
+  }
+
+  &__list {
+    @include m.flex-settings (row, wrap, 55px 120px, center, stretch);
+    text-align: center;
+
+    img {
+      margin-bottom: 22px;
+    }
+
+    figcaption {
+      font-family: v.$font-family;
+      font-size: 1.25rem;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+    }
+  }
+}
