@@ -2,13 +2,19 @@
 @use '/src/scss/common/mixins' as m;
 
 .donation {
-  .container {
-    @include m.flex-settings (row, no-wrap, 30px, center, center);
+  @include m.flex-settings (row, no-wrap, 30px, center, center);
+  max-width: 915px;
+  margin: 0 auto;
+
+  &__img {
+    flex: 1 1 auto;
   }
 
   &__info {
     @include m.flex-settings (column, no-wrap, 20px, start, stretch);
+    flex-shrink: 0;
     max-width: 380px;
+    min-width: 300px;
   }
 
   &__bank {
@@ -41,5 +47,12 @@
     line-height: 150%;
     color: v.$color-dark-m;
     letter-spacing: 0.03em;
+  }
+}
+
+@media (max-width: 800px) {
+  .donation {
+    flex-direction: column-reverse;
+    gap: 60px;
   }
 }

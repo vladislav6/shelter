@@ -98,6 +98,11 @@ img {
 }
 
 @media (max-width: 768px) {
+  h3 {
+    letter-spacing: 0.07em;
+    font-size: 2.11rem;
+  }
+
   .container {
     padding-left: 30px;
     padding-right: 30px;
