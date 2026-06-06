@@ -8,6 +8,10 @@
     margin: 0 auto;
   }
 
+  &__img {
+    flex: 1 1 auto;
+  }
+
   &__description {
       @include m.flex-settings (column, no-wrap, 25px, center, stretch);
       flex-shrink: 0;
@@ -29,10 +33,6 @@
   &__text2 {
     letter-spacing: 0.5px;
   }
-}
-
-.about__img {
-  flex: 1 1 auto;
 }
 
 @media (max-width: 800px) {

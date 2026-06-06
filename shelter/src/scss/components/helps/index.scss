@@ -15,7 +15,7 @@
     text-align: center;
 
     img {
-      margin-bottom: 22px;
+      margin: 0 auto 30px;
     }
 
     figcaption {
@@ -23,6 +23,17 @@
       font-size: 1.25rem;
       line-height: 115%;
       letter-spacing: 0.06em;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .helps__list {
+    column-gap: 60px;
+
+    figure {
+      flex-shrink: 0;
+      width: 170px;
     }
   }
 }
