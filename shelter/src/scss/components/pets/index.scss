@@ -35,3 +35,28 @@
     }
   }
 }
+
+@media (max-width: 950px) {
+  .pets {
+    .container {
+      gap: 30px;
+      padding-bottom: 74px;
+    }
+
+    &__list {
+      @include m.grid-settings (3, 28px 40px);
+    }
+
+    .pagination {
+      margin-top: 13px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pets__list {
+    @include m.grid-settings (2, 28px 40px);
+    height: 1365px;
+    overflow: hidden;
+  }
+}
