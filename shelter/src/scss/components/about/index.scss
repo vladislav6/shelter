@@ -4,11 +4,15 @@
 .about {
   &__pets {
     @include m.flex-settings (row, no-wrap, 120px, start, center);
-    padding: 0 175px;
+    max-width: 850px;
+    margin: 0 auto;
   }
 
   &__description {
-     @include m.flex-settings (column, no-wrap, 25px, center, stretch);
+      @include m.flex-settings (column, no-wrap, 25px, center, stretch);
+      flex-shrink: 0;
+      max-width: 430px;
+      min-width: 300px;
   }
 
   &__title {
@@ -20,5 +24,21 @@
     font-size: 0.9375rem;
     line-height: 160%;
     letter-spacing: 0.4px;
+  }
+
+  &__text2 {
+    letter-spacing: 0.5px;
+  }
+}
+
+.about__img {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 800px) {
+  .about {
+    &__pets {
+      @include m.flex-settings (column-reverse, no-wrap, 80px, start, center);
+    }
   }
 }
