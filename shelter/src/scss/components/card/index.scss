@@ -7,8 +7,10 @@
   padding-bottom: 30px;
   cursor: pointer;
   border-radius: 9px;
+  transition: background .4s ease;
 
   &__title {
+    font-family: v.$font-family;
     font-size: 1.25rem;
     letter-spacing: 0.06em;
   }
@@ -17,4 +19,8 @@
     width: 187px;
     background-color: inherit;
   }
+}
+
+.card:hover {
+  background-color: v.$color-light-xl;
 }
