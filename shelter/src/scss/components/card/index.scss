@@ -8,6 +8,7 @@
   cursor: pointer;
   border-radius: 9px;
   transition: background .4s ease;
+  flex-shrink: 0;
 
   &__title {
     font-size: 1.25rem;

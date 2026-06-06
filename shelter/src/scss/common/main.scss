@@ -87,6 +87,8 @@ img {
 
 .sldr-pgntn-btn {
   width: 52px;
+  border-radius: 100%;
+  flex-shrink: 0;
 }
 
 .card:hover .card__btn,
