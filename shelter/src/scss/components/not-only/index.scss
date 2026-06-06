@@ -12,6 +12,9 @@
 .offer {
   @include m.flex-settings (column, no-wrap, 42px, center, stretch);
   margin-top: -80px;
+  flex-shrink: 0;
+  max-width: 460px;
+  min-width: 300px;
   
   &__title {
     font-size: 2.75rem;
@@ -31,6 +34,29 @@
   }
 }
 
-.start-screen-puppy img {
-  display: block;
+.start-screen-puppy {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 1000px) {
+  .not-only {
+    .container {
+      @include m.flex-settings (column, no-wrap, 100px, start, center);
+      padding-top: 26px;
+    }
+  }
+
+  .offer {
+    margin-top: auto;
+
+    &__btn {
+      align-self: center;
+    }
+  }
+
+  .start-screen-puppy {
+    padding-left: 139px;
+    align-self: flex-end;
+  }
+
 }
