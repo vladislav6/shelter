@@ -43,7 +43,6 @@ footer {
   .location {
     @include m.flex-settings (column, no-wrap, 32px, start, stretch);
     max-width: 302px;
-    min-width: 300px;
   }
 
   .footer-img {
@@ -53,7 +52,7 @@ footer {
 
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
   footer {  
     .container {
       gap: 60px;
@@ -75,6 +74,27 @@ footer {
 
     .location {
       gap: 34px;
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  footer {
+    .container {
+      gap: 35px;
+    }
+
+    .contacts {
+      align-items: center;
+    }
+
+    .location {
+      gap: 39px;
+
+      &__title {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
   }
 }

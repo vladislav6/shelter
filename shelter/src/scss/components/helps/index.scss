@@ -37,3 +37,40 @@
     }
   }
 }
+
+@media (max-width: 530px) {
+
+  .helps {
+  .container {
+      padding-left: 15px;
+      padding-right: 15px;
+      gap: 42px;
+    }
+  }
+
+  .helps__list {
+    gap: 30px 30px;
+
+    figure {
+      flex-shrink: 0;
+      width: 130px;
+    }
+
+    img {
+      margin-bottom: 20px;
+      width: 50px;
+      height: 50px;
+    }
+
+    figcaption {
+      font-size: 0.9375rem;
+      line-height: 110%;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .helps__list {
+    justify-content: flex-start;
+  }
+}

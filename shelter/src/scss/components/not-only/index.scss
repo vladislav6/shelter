@@ -21,7 +21,7 @@
     line-height: 130%;
     color: v.$color-light-xl;
     letter-spacing: normal;
-    padding-right: 50px;
+    transition: font-size .4s ease;
   }
   
   &__text {
@@ -36,6 +36,8 @@
 
 .start-screen-puppy {
   flex: 1 1 auto;
+  max-width: 698px;
+  min-width: 260px;
 }
 
 @media (max-width: 1000px) {
@@ -55,8 +57,33 @@
   }
 
   .start-screen-puppy {
-    padding-left: 139px;
     align-self: flex-end;
+    padding-left: 130px;
   }
 
+}
+
+@media (max-width: 530px) {
+  .not-only {
+    .container {
+      gap: 105px;
+    }
+  }
+
+  .offer {
+    &__title {
+      font-size: 1.6rem;
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+  
+    &__text {
+      text-align: center;
+      line-height: 150%;
+    }
+  }
+
+  .start-screen-puppy {
+    padding-left: 40px;
+  }
 }

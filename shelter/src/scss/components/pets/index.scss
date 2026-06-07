@@ -60,3 +60,22 @@
     overflow: hidden;
   }
 }
+
+@media (max-width: 530px) {
+  .pets {
+    .container {
+      gap: 42px;
+      padding: 42px 10px;
+
+    }
+  
+    &__list {
+      @include m.grid-settings (1, 30px);
+    }
+
+    .pagination {
+      margin-top: 0;
+      gap: 10px;
+    }
+  }
+}

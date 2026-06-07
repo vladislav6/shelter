@@ -11,6 +11,7 @@
   flex-shrink: 0;
 
   &__title {
+    font-family: v.$font-family;
     font-size: 1.25rem;
     letter-spacing: 0.06em;
   }
@@ -23,4 +24,10 @@
 
 .card:hover {
   background-color: v.$color-light-xl;
+}
+
+@media (max-width: 320px) {
+  .card {
+    gap: 28px;
+  }
 }

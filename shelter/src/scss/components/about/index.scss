@@ -19,10 +19,6 @@
       min-width: 300px;
   }
 
-  &__title {
-    padding-right: 50px;
-  }
-
   &__text1,
   &__text2 {
     font-size: 0.9375rem;
@@ -39,6 +35,25 @@
   .about {
     &__pets {
       @include m.flex-settings (column-reverse, no-wrap, 80px, start, center);
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .about {
+    &__pets {
+      gap: 42px;
+    }
+
+    &__img {
+      flex: 1 1 auto;
+      padding: 0 21px;
+    }
+
+    &__text1,
+    &__text2 {
+      text-align: justify;
+      padding: 0 15px;
     }
   }
 }

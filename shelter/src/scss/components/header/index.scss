@@ -25,15 +25,21 @@ header {
   }
 }
 
-.navigation ul {
-  @include m.flex-settings (row, no-wrap, 35px, start, center);
+.navigation {
+  ul {
+    @include m.flex-settings (row, no-wrap, 35px, start, center);
 
-  a { color: v.$color-dark-s; }
-  a:hover { color: v.$color-light-s; }
+    a { color: v.$color-dark-s; }
+    a:hover { color: v.$color-light-s; }
 
-  .active {
-    color: v.$color-light-s;
-    border-bottom: 3px solid v.$color-primary;
+    .active {
+      color: v.$color-light-s;
+      border-bottom: 3px solid v.$color-primary;
+    }
+  }
+  
+  .mobile {
+    display: none;
   }
 }
 
@@ -48,4 +54,40 @@ header {
   .logo__subtitle {
     color: v.$color-dark-3xl;
   }
+}
+
+@media (max-width: 760px) {
+  .navigation {
+    ul {
+      display: none;
+    }
+
+    .mobile {
+      @include m.flex-settings (column, no-wrap, 8px, start, stretch);
+      cursor: pointer;
+
+      span {
+        border: 1px solid v.$color-primary;
+        width: 30px;
+        height: 0px;
+      }
+    }
+  }
+  .pets-page {
+    .navigation {
+      .mobile {
+        span {
+          border-color: #000000;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  header {
+  .container {
+    padding: 30px 20px;
+  }
+}
 }
