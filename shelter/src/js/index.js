@@ -1,17 +1,17 @@
 import '../scss/index.scss';
 
 console.log(`
-Main page (70 / 70)
-- Markup validation (10 / 10)
-- Layout matches the design (35 / 35)
-Each block/section is checked independently - issues from a previous block don't carry over.
-- CSS requirements (15 / 15)
-- Interactivity (10 / 10)
-
-Pets page (40 / 40)
-- Markup validation (10 / 10)
-- Layout matches the design (15 / 15)
-Each block/section is checked independently - issues from a previous block don't carry over.
-- CSS requirements (5 / 5)
-- Interactivity (10 / 10)
+Main page (45 / 45)
+- Layout matches the design at 1280px
+- Layout matches the design at 768px
+- Layout matches the design at 320px
+Pets page (15 / 15)
+- Layout matches the design at 1280px
+- Layout matches the design at 768px
+- Layout matches the design at 320px
+Responsive behavior (50 / 50)
+- No horizontal scroll on either page at any width from 320px to 1280px
+- Layout adapts smoothly between breakpoints - no overlapping, cut-off, or visually broken content on either page
+- The burger icon appears instead of the navigation menu when the viewport is narrower than 768px on both pages
+- Markup is valid on both pages
 `);
