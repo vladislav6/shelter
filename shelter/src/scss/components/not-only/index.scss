@@ -12,13 +12,16 @@
 .offer {
   @include m.flex-settings (column, no-wrap, 42px, center, stretch);
   margin-top: -80px;
+  flex-shrink: 0;
+  max-width: 460px;
+  min-width: 300px;
   
   &__title {
-    font-size: 2.75rem;
+    font-size: 2.73rem;
     line-height: 130%;
     color: v.$color-light-xl;
     letter-spacing: normal;
-    padding-right: 50px;
+    transition: font-size .4s ease;
   }
   
   &__text {
@@ -31,6 +34,56 @@
   }
 }
 
-.start-screen-puppy img {
-  display: block;
+.start-screen-puppy {
+  flex: 1 1 auto;
+  max-width: 698px;
+  min-width: 260px;
+}
+
+@media (max-width: 1000px) {
+  .not-only {
+    .container {
+      @include m.flex-settings (column, no-wrap, 100px, start, center);
+      padding-top: 26px;
+    }
+  }
+
+  .offer {
+    margin-top: auto;
+
+    &__btn {
+      align-self: center;
+    }
+  }
+
+  .start-screen-puppy {
+    align-self: flex-end;
+    padding-left: 130px;
+  }
+
+}
+
+@media (max-width: 530px) {
+  .not-only {
+    .container {
+      gap: 105px;
+    }
+  }
+
+  .offer {
+    &__title {
+      font-size: 1.6rem;
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+  
+    &__text {
+      text-align: center;
+      line-height: 150%;
+    }
+  }
+
+  .start-screen-puppy {
+    padding-left: 40px;
+  }
 }

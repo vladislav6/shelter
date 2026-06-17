@@ -7,11 +7,21 @@
   }
 
   &__slider {
-    @include m.flex-settings (row, no-wrap, 53px, start, center);
+    display: grid;
+    grid-template-columns: 52px 1fr 52px;
+    gap: 0 53px;
+    align-items: center;
+    transition: gap .4s ease;
+    flex-shrink: 0;
+    width: 100%;
   }
 
   &__slides {
-    @include m.flex-settings (row, no-wrap, 90px, start, center);
+    @include m.flex-settings (row, no-wrap, 90px, start, stretch);
+    flex: 1 1 auto;
+    width: 100%;
+    overflow: hidden;
+    transition: gap .4s ease;
   }
 
   &__btn {
@@ -32,5 +42,48 @@
 
   .right-arrow {
     transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 940px) {
+  .pets-slider{
+    &__slider {
+      gap: 12px;
+    }
+
+    &__slides {
+      gap: 40px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .pets-slider{
+    .container {
+      gap: 42px;
+    }
+
+    &__slider {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "slides slides"
+      "left-btn right-btn";
+      gap: 20px;
+      padding: 0 15px;
+    }
+
+    &__slides {
+      grid-area: slides;
+    }
+
+    .left-arrow {
+      grid-area: left-btn;
+      margin-left: 44px;
+    }
+
+    .right-arrow {
+      grid-area: right-btn;
+      margin-right: 44px;
+    }
   }
 }
