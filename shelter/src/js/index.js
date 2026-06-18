@@ -1,4 +1,5 @@
 import '../scss/index.scss';
+import './modules/burger';
 
 console.log(`
 Main page (45 / 45)
