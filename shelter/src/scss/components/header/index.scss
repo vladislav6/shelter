@@ -58,6 +58,9 @@ header {
 
 @media (max-width: 760px) {
   .navigation {
+    position: static;
+    z-index: 2;
+
     ul {
       position: absolute;
       top: 0;

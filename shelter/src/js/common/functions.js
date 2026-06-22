@@ -16,11 +16,11 @@ function createMyElement(element, classElement = '', textElement = '') {
   return myElement;
 }
 
-const createSlides = (slidesCount) => {
-  return Array.from( {length: slidesCount }, () => {
-    const slide = document.createElement('div');
-    slide.classList.add('pets-slider__slide');
-    return slide;
+const createGroups = (groupsCount, groupName) => {
+  return Array.from( {length: groupsCount }, () => {
+    const group = document.createElement('div');
+    group.classList.add(groupName);
+    return group;
   });
 };
 
@@ -49,24 +49,27 @@ export function shuffle(array) {
   return array;
 }
 
-export function getCardsFragment(pets, cardsPerSlide = pets.length) {
+export function getCardsFragment(pets, groupSize, groupName) {
   const fragment = document.createDocumentFragment();
 
-  const slidesCount = Math.ceil(pets.length / cardsPerSlide);
+  const groupsCount = Math.ceil(pets.length / groupSize);
 
-  const slidesElement = createSlides(slidesCount);
+  const groupsElement = createGroups(groupsCount, groupName);
   const cards = createCards(pets);
   
-  let slideId = 0;
+  let groupId = 0;
   cards.forEach((card) => {
-    if (slidesElement[slideId].children.length === cardsPerSlide) {
-      slideId += 1;
+    if (groupsElement[groupId].children.length === groupSize) {
+      groupId += 1;
     }
 
-    slidesElement[slideId].append(card);
+    groupsElement[groupId].append(card);
   });
 
-  slidesElement.forEach((slide) => fragment.append(slide));
+  groupsElement.forEach((group) => fragment.append(group));
 
   return fragment;
 }
+
+export const newPetsSizeCard = (pets) =>
+  [...pets, ...pets, ...pets, ...pets, ...pets, ...pets];

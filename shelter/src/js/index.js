@@ -1,6 +1,7 @@
 import '../scss/index.scss';
 import './modules/burger';
 import './modules/slider';
+import './modules/pagination';
 
 console.log(`
 Main page (45 / 45)
