@@ -1,0 +1,92 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.donation {
+  @include m.flex-settings (row, no-wrap, 30px, start, center);
+  max-width: 915px;
+  margin: 0 auto;
+
+  &__img {
+    flex: 1 1 auto;
+  }
+
+  &__info {
+    @include m.flex-settings (column, no-wrap, 20px, start, stretch);
+    flex-shrink: 0;
+    max-width: 380px;
+    min-width: 300px;
+  }
+
+  &__bank {
+    font-family: v.$font-family;
+    font-size: 0.9375rem;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: v.$color-dark-l;
+  }
+
+  &__number {
+    @include m.flex-settings (row, no-wrap, 15px, start, center);
+    border-radius: 9px;
+    padding: 10px 15px;
+    background: v.$color-primary;
+    max-width: 349px;
+
+    figcaption {
+      font-family: v.$font-family;
+      font-size: 1.25rem;
+      line-height: 115%;
+      letter-spacing: 0.11em;
+      color: v.$color-dark-l;
+    }
+  }
+
+  &__legal {
+    font-style: italic;
+    font-size: 0.75rem;
+    line-height: 150%;
+    color: v.$color-dark-m;
+    letter-spacing: 0.03em;
+  }
+}
+
+@media (max-width: 800px) {
+  .donation {
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 530px) {
+  .donation {
+    gap: 42px;
+
+    &__img {
+      max-width: 260px;
+    }
+
+    &__info {
+      align-items: center;
+    }
+  
+    &__bank {
+      line-height: 160%;
+      letter-spacing: normal;
+    }
+
+    &__number {
+      max-width: 281px;
+
+      figcaption {
+        font-size: 0.9375rem;
+        line-height: 110%;
+        letter-spacing: 0.11em;
+      }
+    }
+
+    &__legal {
+      text-align: justify;
+      padding: 0 10px;
+    }
+  }
+}

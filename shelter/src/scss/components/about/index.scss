@@ -1,0 +1,59 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.about {
+  &__pets {
+    @include m.flex-settings (row, no-wrap, 120px, start, center);
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  &__img {
+    flex: 1 1 auto;
+  }
+
+  &__description {
+      @include m.flex-settings (column, no-wrap, 25px, center, stretch);
+      flex-shrink: 0;
+      max-width: 430px;
+      min-width: 300px;
+  }
+
+  &__text1,
+  &__text2 {
+    font-size: 0.9375rem;
+    line-height: 160%;
+    letter-spacing: 0.4px;
+  }
+
+  &__text2 {
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 800px) {
+  .about {
+    &__pets {
+      @include m.flex-settings (column-reverse, no-wrap, 80px, start, center);
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .about {
+    &__pets {
+      gap: 42px;
+    }
+
+    &__img {
+      flex: 1 1 auto;
+      padding: 0 21px;
+    }
+
+    &__text1,
+    &__text2 {
+      text-align: justify;
+      padding: 0 15px;
+    }
+  }
+}

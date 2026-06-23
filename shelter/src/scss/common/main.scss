@@ -1,0 +1,150 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+html {
+  scroll-behavior: smooth;
+  @include m.typography (v.$second-family, 400, 16px, 160%, normal, v.$color-dark-xl);
+}
+
+body {
+  background-color: v.$color-light-xl;
+  @include m.flex-settings (column, no-wrap, 0, start, stretch);
+  height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  @include m.typography (v.$font-family, 400, 2rem, 100%, 0.05em, v.$color-dark-l);
+  margin: 0;
+}
+
+h3,
+.pets__title {
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  font-size: 2.1875rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color .4s ease;
+}
+
+ul li { list-style: none; }
+
+ul { padding: 0; margin: 0; }
+
+figure,
+p { margin: 0; }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-transparent-gradient {
+  background:
+    url('/src/assets/noise_transparent.png'),
+    radial-gradient(
+      circle at -0% -15%, 
+      rgba(91, 72, 58, 1) 0%, 
+      rgba(91, 72, 58, 1) 10%, 
+      rgba(91, 72, 58, 1) 20%, 
+      rgba(91, 72, 58, 1) 30%,
+      rgba(38, 36, 37, 1) 60%,
+      rgba(38, 36, 37, 1) 70%,
+      rgba(38, 36, 37, 1) 80%,
+      rgba(38, 36, 37, 1) 90%,
+      rgba(38, 36, 37, 1) 100%
+      ),
+    v.$gradient-background;
+}
+
+.bg-light-l {
+  background: v.$color-light-l;
+}
+
+.container {
+  max-width: 1280px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 80px 40px 100px;
+}
+
+.btn {
+  cursor: pointer;
+  border-radius: 100px;
+  @include m.typography (v.$font-family, 400, 1.1rem, 130%, 0.04em, v.$color-dark-3xl);
+  height: 52px;
+  border: 2px solid v.$color-primary;
+  display: grid;
+  place-items: center;
+  transition: background .4s ease;
+}
+
+.sldr-pgntn-btn {
+  width: 52px;
+  border-radius: 100%;
+  flex-shrink: 0;
+}
+
+.card:hover .card__btn,
+.btn:hover {
+  background: v.$color-primary-light;
+  border: 2px solid v.$color-primary-light;
+}
+
+@media (max-width: 768px) {
+  h3 {
+    letter-spacing: 0.07em;
+    font-size: 2.11rem;
+  }
+
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .bg-transparent-gradient {
+    background:
+      url('/src/assets/noise_transparent.png'),
+      radial-gradient(
+        circle at -100% 25%, 
+        rgba(91, 72, 58, 1) 0%,
+        rgba(91, 72, 58, 1) 60%,
+        rgba(38, 36, 37, 1) 75%,
+        rgba(38, 36, 37, 1) 100%
+        ),
+      v.$gradient-background;
+  }
+}
+
+@media (max-width: 530px) {
+  .pets__title,
+  h3 {
+    font-size: 25px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    padding: 42px 10px;
+  }
+
+  .bg-transparent-gradient {
+    background:
+      url('/src/assets/noise_transparent.png'),
+      radial-gradient(
+        circle at -170% 25%, 
+        rgba(91, 72, 58, 1) 0%,
+        rgba(91, 72, 58, 1) 60%,
+        rgba(38, 36, 37, 1) 75%,
+        rgba(38, 36, 37, 1) 100%
+        ),
+      v.$gradient-background;
+  }
+}

@@ -1,0 +1,33 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.card {
+  @include m.flex-settings (column, no-wrap, 30px, start, center);
+  background-color: v.$color-light-s;
+  padding-bottom: 30px;
+  cursor: pointer;
+  border-radius: 9px;
+  transition: background .4s ease;
+  flex-shrink: 0;
+  
+  &__title {
+    font-family: v.$font-family;
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+  }
+
+  &__btn {
+    width: 187px;
+    background-color: inherit;
+  }
+}
+
+.card:hover {
+  background-color: v.$color-light-xl;
+}
+
+@media (max-width: 320px) {
+  .card {
+    gap: 28px;
+  }
+}

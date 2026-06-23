@@ -1,0 +1,24 @@
+@mixin typography ($ff, $fw: normal, $fz, $lh: normal, $ls: normal, $clr) {
+  font-family: $ff;
+  font-size: $fz;
+  color: $clr;
+
+  @if ($fw != normal) { font-weight: $fw; }
+  @if ($lh != normal) { line-height: $lh; } 
+  @if ($ls != normal){ letter-spacing: $ls; }
+}
+
+@mixin flex-settings ($fd: row, $fw: no-wrap, $gap: 0, $jc: start, $ai: stretch) {
+  @if ($fd != row) { flex-direction: $fd; }
+  @if ($fw != no-wrap){ flex-wrap: $fw; }
+  @if ($gap != 0){ gap: $gap; }
+  @if ($jc != start){ justify-content: $jc; }
+  @if ($ai != stretch){ align-items: $ai; }
+  display: flex;
+}
+
+@mixin grid-settings ($gtc, $gap: 0) {
+  grid-template-columns: repeat($gtc, 1fr);
+  gap: $gap;
+  display: grid;
+}

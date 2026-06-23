@@ -1,0 +1,93 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+header {
+  .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include m.flex-settings (row, no-wrap, 0, space-between, center);
+  }
+}
+
+.logo {
+  @include m.flex-settings (column, no-wrap, 0, start, stretch);
+
+  &__title {
+    color: v.$color-primary;
+  }
+
+  &__subtitle {
+    font-size: 0.9375rem;
+    letter-spacing:  0.058em;
+    padding: 8px 0 0 5px;
+    margin-bottom: -5px;
+    color: v.$color-light-s;
+  }
+}
+
+.navigation {
+  ul {
+    @include m.flex-settings (row, no-wrap, 35px, start, center);
+
+    a { color: v.$color-dark-s; }
+    a:hover { color: v.$color-light-s; }
+
+    .active {
+      color: v.$color-light-s;
+      border-bottom: 3px solid v.$color-primary;
+    }
+  }
+  
+  .mobile {
+    display: none;
+  }
+}
+
+.pets-page {
+  .logo__title,
+  .navigation a {
+    color: v.$color-dark-l;
+  }
+
+  .navigation ul a:hover,
+  .navigation ul .active,
+  .logo__subtitle {
+    color: v.$color-dark-3xl;
+  }
+}
+
+@media (max-width: 767px) {
+  .navigation {
+    ul {
+      display: none;
+    }
+
+    .mobile {
+      @include m.flex-settings (column, no-wrap, 8px, start, stretch);
+      cursor: pointer;
+
+      span {
+        border: 1px solid v.$color-primary;
+        width: 30px;
+        height: 0px;
+      }
+    }
+  }
+  .pets-page {
+    .navigation {
+      .mobile {
+        span {
+          border-color: #000000;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  header {
+  .container {
+    padding: 30px 20px;
+  }
+}
+}

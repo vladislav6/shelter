@@ -1,0 +1,81 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.pets {
+  .container {
+    padding-top: 77px;
+    @include m.flex-settings (column, no-wrap, 60px, start, center);
+  }
+
+  &__list {
+    @include m.grid-settings (4, 28px 40px);
+    margin-top: -1px;
+  }
+
+  &__title {
+    text-align: center;
+    padding-left: 3px;
+  }
+
+  .pagination {
+    @include m.flex-settings (row, no-wrap, 20px, start, stretch);
+  
+    .inactive {
+      color: v.$color-dark-s;
+      border-color: v.$color-dark-s;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .active {
+      background: v.$color-primary;
+      cursor: default;
+      pointer-events: none;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .pets {
+    .container {
+      gap: 30px;
+      padding-bottom: 74px;
+    }
+
+    &__list {
+      @include m.grid-settings (3, 28px 40px);
+    }
+
+    .pagination {
+      margin-top: 13px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pets__list {
+    @include m.grid-settings (2, 28px 40px);
+    height: 1365px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 530px) {
+  .pets {
+    .container {
+      gap: 42px;
+      padding: 42px 10px;
+
+    }
+  
+    &__list {
+      @include m.grid-settings (1, 30px);
+    }
+
+    .pagination {
+      margin-top: 0;
+      gap: 10px;
+    }
+  }
+}
