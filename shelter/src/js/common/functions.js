@@ -1,3 +1,5 @@
+export const petsWithId = (pets) => pets.forEach((pet, id) => pet.id = id);
+
 export function cleanDOM(parent) {
   while (parent.firstChild) {
     parent.firstChild.remove();
@@ -16,6 +18,61 @@ function createMyElement(element, classElement = '', textElement = '') {
   return myElement;
 }
 
+export function createModal(pet) {
+  const {
+    name,
+    img,
+    type,
+    breed,
+    description,
+    age,
+    inoculations,
+    diseases,
+    parasites
+  } = pet;
+
+  const overlay = createMyElement('div', 'overlay');
+  const wrapper = createMyElement('div', 'wrapper');
+  
+  const closeBtn = createMyElement('button', 'btn sldr-pgntn-btn close-modal-btn');
+  const modal = createMyElement('div', 'modal');
+
+  const imgBlock = createMyElement('div', 'modal__img');
+  const petPicture = createMyElement('img');
+  petPicture.src = img;
+  petPicture.width = 500;
+  petPicture.height = 500;
+  petPicture.alt = `Pet ${type}`;
+  
+  const aboutPet = createMyElement('div', 'modal__info');
+  const title = createMyElement('h3', 'modal__title', name);
+  const typeBreed = createMyElement('p', 'modal__type', `${type} - ${breed}`);
+  const desc = createMyElement('p', 'modal__description', description);
+
+  const list = createMyElement('ul', 'modal__list');
+  const itemAge = createMyElement('li', '', age);
+  const ageLabel = createMyElement('span', '', 'Age: ');
+  itemAge.prepend(ageLabel);
+  const itemInoculations = createMyElement('li', '', inoculations.join(', '));
+  const inoculationsLabel = createMyElement('span', '', 'Inoculations: ');
+  itemInoculations.prepend(inoculationsLabel);
+  const itemDiseases = createMyElement('li', '', diseases.join(', '));
+  const diseasesLabel = createMyElement('span', '', 'Diseases: ');
+  itemDiseases.prepend(diseasesLabel);
+  const itemParasites = createMyElement('li', '', parasites.join(', '));
+  const parasitesLabel = createMyElement('span', '', 'Parasites: ');
+  itemParasites.prepend(parasitesLabel);
+  list.append(itemAge, itemInoculations, itemDiseases, itemParasites);
+  
+  imgBlock.append(petPicture);
+  aboutPet.append(title, typeBreed, desc, list);
+  modal.append(imgBlock, aboutPet);
+  wrapper.append(closeBtn, modal);
+  overlay.append(wrapper);
+
+  return overlay;
+}
+
 const createGroups = (groupsCount, groupName) => {
   return Array.from( {length: groupsCount }, () => {
     const group = document.createElement('div');
@@ -25,9 +82,9 @@ const createGroups = (groupsCount, groupName) => {
 };
 
 const createCards = (pets) => {
-  return pets.map(({name, img}) => {
+  return pets.map(({id, name, img}) => {
     const card = createMyElement('div', 'card');
-    card.dataset.petName = name;
+    card.dataset.petId = id;
     const image = createMyElement('img');
     image.src = img;
     image.alt = `pet ${name}`;

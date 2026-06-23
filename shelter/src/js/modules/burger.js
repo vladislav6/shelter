@@ -2,7 +2,7 @@ const nav = document.querySelector('nav.navigation');
 
 
 const showMenu = (e) => {
-  if (window.innerWidth <= 760) {
+  if (window.innerWidth <= 767) {
     window.addEventListener('resize', closeMenu);
 
     if (

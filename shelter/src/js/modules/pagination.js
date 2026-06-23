@@ -1,7 +1,9 @@
 import pets from '../common/pets.json';
-import { newPetsSizeCard, getCardsFragment, cleanDOM, shuffle } from '../common/functions';
+import { newPetsSizeCard, getCardsFragment, cleanDOM, shuffle, petsWithId } from '../common/functions';
+import { openModal } from './modal';
 
 if (document.querySelector('.pets-page')) {
+  petsWithId(pets);
   const newPets = newPetsSizeCard(pets);
 
   const petsLists = document.querySelector('.pets__lists');
@@ -65,6 +67,8 @@ if (document.querySelector('.pets-page')) {
 
   drawCards();
   window.addEventListener('resize', drawCards);
+
+  petsLists.addEventListener('click', openModal);
 
   const moveToFirst = () => {
     setCurrentPage(petsLists.firstChild);

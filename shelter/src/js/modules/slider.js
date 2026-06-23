@@ -1,9 +1,11 @@
-import { getCardsFragment, cleanDOM, shuffle } from '../common/functions';
+import { getCardsFragment, cleanDOM, shuffle, petsWithId } from '../common/functions';
 import pets from '../common/pets.json';
+import { openModal } from './modal';
 
 if (!document.querySelector('.pets-page')) {
   const slider = document.querySelector('.pets-slider__slider');
   const slides = document.querySelector('.pets-slider__slides');
+  petsWithId(pets);
 
   const renderSlides = (cardsPerSlide) => {
     if (slides.hasChildNodes()
@@ -30,6 +32,8 @@ if (!document.querySelector('.pets-page')) {
 
   drawCards();
   window.addEventListener('resize', drawCards);
+
+  slides.addEventListener('click', openModal);
 
   const slidesChildren = (currentPosition) => {
     [...slides.children].forEach((slide) => {
@@ -74,8 +78,8 @@ if (!document.querySelector('.pets-page')) {
         const cardsPerSlide = window.innerWidth >= 1140 ? 3 : window.innerWidth >= 755 ? 2 : 1;
         if (cardsPerSlide > 1) {
           const currentSlide = slides.lastChild;
-          const petNames = [...currentSlide.children].map((pet) => pet.dataset.petName);
-          const availableCards = pets.filter((pet) => !petNames.includes(pet.name));
+          const currentPetId = [...currentSlide.children].map((pet) => Number(pet.dataset.petId));
+          const availableCards = pets.filter(({ id }) => !currentPetId.includes(id));
           const shuffledCards = shuffle([...availableCards]);
           const fragment = getCardsFragment(shuffledCards, cardsPerSlide, 'pets-slider__slide').children[0];
           slides.append(fragment);
