@@ -17,17 +17,28 @@
   }
 
   &__slides {
-    @include m.flex-settings (row, no-wrap, 90px, start, stretch);
-    flex: 1 1 auto;
-    width: 100%;
+    @include m.flex-settings (row, no-wrap, 0, start, stretch);
     overflow: hidden;
-    transition: gap .4s ease;
+  }
+
+  &__slide {
+    @include m.flex-settings (row, no-wrap, 10px, space-between, stretch);
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  &__slide:first-of-type {
+    margin-left: -100%;
   }
 
   &__btn {
     padding: 15px 40px;
     width: 261px;
     background: v.$color-primary;
+  }
+
+  .last-slide {
+    justify-content: space-around;
   }
 
   .left-arrow,
@@ -43,6 +54,18 @@
   .right-arrow {
     transform: rotate(180deg);
   }
+
+  .no-click {
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 1140px) {
+  .pets-slider{
+    &__slide {
+      justify-content: space-around;
+    }
+  }
 }
 
 @media (max-width: 940px) {
@@ -50,14 +73,10 @@
     &__slider {
       gap: 12px;
     }
-
-    &__slides {
-      gap: 40px;
-    }
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   .pets-slider{
     .container {
       gap: 42px;

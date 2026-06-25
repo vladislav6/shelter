@@ -56,15 +56,40 @@ header {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 767px) {
   .navigation {
+    position: static;
+    z-index: 2;
+
     ul {
-      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 100vh;
+      overflow: hidden;
+      gap: 40px;
+      flex-direction: column;
+      justify-content: center;
+      background-color: v.$color-dark-3xl;
+      transition: width .6s ease;
+
+      li {
+        min-width: max-content;
+      }
+
+      a,
+      .active {
+        font-size: 32px;
+        line-height: 160%;
+      }
     }
 
     .mobile {
       @include m.flex-settings (column, no-wrap, 8px, start, stretch);
       cursor: pointer;
+      transition: transform .6s ease;
 
       span {
         border: 1px solid v.$color-primary;
@@ -73,12 +98,47 @@ header {
       }
     }
   }
+
   .pets-page {
     .navigation {
       .mobile {
         span {
           border-color: #000000;
         }
+      }
+    }
+  }
+
+  .pets-page .show-menu,
+  .show-menu {
+    position: fixed;
+    inset: 0;
+    background-color: rgba($color: v.$color-dark-3xl, $alpha: .5);
+    cursor: pointer;
+
+    ul {
+      width: 320px;
+      cursor: default;
+
+      a { color: v.$color-dark-s; }
+      a:hover { color: v.$color-light-s; }
+
+      .active {
+        color: v.$color-light-s;
+        border-bottom: 3px solid v.$color-primary;
+        cursor: pointer;
+      }
+    }
+
+    .mobile {
+      position: absolute;
+      top: 49px;
+      right: 20px;
+      z-index: 3;
+      transform: rotate(90deg);
+
+      span {
+        border-color: v.$color-primary;
       }
     }
   }
