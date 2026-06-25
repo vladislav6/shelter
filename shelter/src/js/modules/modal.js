@@ -1,5 +1,4 @@
-import pets from '../common/pets.json';
-import { createModal } from '../common/functions';
+import { createModal, loadPets } from '../common/functions';
 
 export function openModal(event) {
   const isCard = event.target.closest('.card');
@@ -8,17 +7,20 @@ export function openModal(event) {
   document.body.classList.add('scroll-lock');
 
   const petId = event.target.closest('.card').dataset.petId;
-  const overlay = createModal(pets[petId]);
 
-  const closeModal = (e) => {
-    const isModalContent = e.target.closest('.modal');
-    if (isModalContent) return;
-    
-    document.body.classList.remove('scroll-lock');
-    document.body.querySelector('.overlay').remove();
-  };
+  loadPets('./pets/pets.json')
+    .then((pets) => {
+      const overlay = createModal(pets[petId]);
 
-  document.body.append(overlay);
+      const closeModal = (e) => {
+        const isModalContent = e.target.closest('.modal');
+        if (isModalContent) return;
+        
+        document.body.classList.remove('scroll-lock');
+        document.body.querySelector('.overlay').remove();
+      };
 
-  overlay.addEventListener('click', closeModal);
+      document.body.append(overlay);
+      overlay.addEventListener('click', closeModal);
+    });
 }

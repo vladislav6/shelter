@@ -1,4 +1,16 @@
-export const petsWithId = (pets) => pets.forEach((pet, id) => pet.id = id);
+export async function loadPets(url) {
+  return await fetch(url)
+    .then((response) => response.json())
+    .then((data) => petsWithId(data))
+    .catch((error) => console.log(`error: ${error.message}`));
+}
+
+export const petsWithId = (pets) => {
+  return pets.map((pet, id) => {
+    pet.id = id;
+    return pet;
+  }
+)};
 
 export function cleanDOM(parent) {
   while (parent.firstChild) {

@@ -1,11 +1,14 @@
-import { getCardsFragment, cleanDOM, shuffle, petsWithId } from '../common/functions';
-import pets from '../common/pets.json';
+import { getCardsFragment, cleanDOM, shuffle, loadPets } from '../common/functions';
 import { openModal } from './modal';
 
-if (!document.querySelector('.pets-page')) {
+const petsPage = document.querySelector('.pets-page');
+loadPets('./pets/pets.json')
+  .then((pets) => slider(pets, petsPage));
+
+function slider(pets, isWork) {
+  if (isWork) return;
   const slider = document.querySelector('.pets-slider__slider');
   const slides = document.querySelector('.pets-slider__slides');
-  petsWithId(pets);
 
   const renderSlides = (cardsPerSlide) => {
     if (slides.hasChildNodes()

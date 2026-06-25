@@ -1,9 +1,12 @@
-import pets from '../common/pets.json';
-import { newPetsSizeCard, getCardsFragment, cleanDOM, shuffle, petsWithId } from '../common/functions';
+import { newPetsSizeCard, getCardsFragment, cleanDOM, shuffle, loadPets } from '../common/functions';
 import { openModal } from './modal';
 
-if (document.querySelector('.pets-page')) {
-  petsWithId(pets);
+export const petsPage = document.querySelector('.pets-page');
+loadPets('./pets/pets.json')
+  .then((pets) => paginationPets(pets, petsPage));
+
+export function paginationPets(pets, isWork) {
+  if (!isWork) return;
   const newPets = newPetsSizeCard(pets);
 
   const petsLists = document.querySelector('.pets__lists');
