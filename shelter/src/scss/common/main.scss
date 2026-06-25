@@ -45,6 +45,10 @@ img {
   height: auto;
 }
 
+.scroll-lock {
+  overflow: hidden;
+}
+
 .bg-transparent-gradient {
   background:
     url('/src/assets/noise_transparent.png'),
@@ -130,7 +134,7 @@ img {
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
   .container {
     padding: 42px 10px;
   }

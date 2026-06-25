@@ -1,0 +1,160 @@
+@use '/src/scss/common/variables' as v;
+@use '/src/scss/common/mixins' as m;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  cursor: pointer;
+  @include m.flex-settings (row, no-wrap, 0, center, center);
+  padding: 0 0 0 69px;
+  color: #000000;
+  transition: padding .6s ease;
+  transition: margin .6s ease;
+
+  .wrapper {
+    position: relative;
+    padding: 52px 52px 0 0;
+    max-width: 952px;
+    min-width: 270px;
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .close-modal-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: url('/src/assets/icons/Vector.png') center no-repeat;
+  }
+
+  .close-modal-btn:hover {
+    background-color: v.$color-primary-light;
+  }
+
+  .modal {
+    position: relative;
+    cursor: default;
+    @include m.flex-settings (row, no-wrap, 0, start, stretch);
+    background-color: v.$color-light-s;
+    max-width: 900px;
+    min-width: 240px;
+    flex-shrink: 0;
+    width: 100%;
+    border-radius: 9px;
+
+    &__img {
+      max-width: 500px;
+      min-width: 350px;
+      width: 100%;
+    }
+
+    img {
+      border-radius: 9px;
+    }
+    
+    &__info {
+      width: 100%;
+      max-width: 351px;
+      min-width: 240px;
+      padding: 50px 10px 20px;
+      font-family: v.$font-family;
+      letter-spacing: 0.06em;
+      color: #000000;
+      margin-left: auto;
+      transition: padding .6s ease;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      color: inherit;
+    }
+
+    &__type {
+      font-size: 1.25rem;
+      line-height: 115%;
+    }
+
+    &__description {
+      margin: 40px 0;
+      font-size: 15px;
+      line-height: 110%;
+      transition: margin .6s ease;
+    }
+
+    &__list {
+
+      li {
+        list-style: disc;
+        list-style-position: inside;
+        margin-bottom: 10px;
+        font-size: 15px;
+        line-height: 110%;
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      li::marker {
+        color: v.$color-primary;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    .modal {
+      
+      &__info {
+        padding: 10px;
+      }
+
+      &__title {
+        font-size: 2.1875rem;
+      }
+
+      &__description {
+        margin: 20px 0;
+        font-size: 13px;
+      }
+
+      &__list {
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .overlay {
+    padding: 0 0 0 40px;
+
+    .wrapper {
+      padding-right:30px;
+    }
+
+    .modal {
+      &__img {
+        display: none;
+      }
+
+      &__info {
+        margin: 0 auto;
+      }
+
+      &__title,
+      &__type {
+        text-align: center;
+      }
+
+      &__description {
+        text-align: justify;
+      }
+    }
+  }
+}
